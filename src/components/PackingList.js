@@ -1,8 +1,22 @@
 import React from 'react'
 
+import Item from './Item';
+
+const initialItems = [
+  { id: 1, description: "Passports", quantity: 2, packed: false },
+  { id: 2, description: "Socks", quantity: 12, packed: false },
+  { id: 3, description: "Screens", quantity: 44, packed: true },
+];
+
 function PackingList() {
   return (
-    <div className='list'>LIST</div>
+    <div className="list">
+      <ul>
+        { initialItems.map((item) => (
+          <Item key={ item.id } quantity={ item.quantity } description={ item.description } packed={ item.packed } />
+        )) }
+      </ul>
+    </div>
   )
 }
 
