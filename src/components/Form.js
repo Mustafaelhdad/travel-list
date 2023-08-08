@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
-function Form() {
+function Form({ onAddItems }) {
   const [description, setDescription] = useState("")
-  const [quantity, setQuantity] = useState(0)
-  const [items, setItems] = useState([])
+  const [quantity, setQuantity] = useState(1)
+  // const [items, setItems] = useState([])
 
-  const handleAddItem = (item) => {
-    setItems(items => [...items, item])
-  }
+  // const handleAddItem = (item) => {
+  //   setItems(items => [...items, item])
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +17,7 @@ function Form() {
     const newItem = { description, quantity, packed: false, id: Date.now() }
     console.log(newItem)
 
-    handleAddItem(newItem)
+    onAddItems(newItem)
 
     setDescription("")
     setQuantity(0)

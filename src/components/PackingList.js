@@ -8,11 +8,11 @@ const initialItems = [
   { id: 3, description: "Screens", quantity: 44, packed: true },
 ];
 
-function PackingList() {
+function PackingList({ items }) {
   return (
     <div className="list">
       <ul>
-        { initialItems.map((item) => (
+        { items.map((item) => (
           <Item key={ item.id } quantity={ item.quantity } description={ item.description } packed={ item.packed } />
         )) }
       </ul>
