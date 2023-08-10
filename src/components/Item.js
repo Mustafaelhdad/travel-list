@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Item({ quantity, description, packed }) {
+function Item({ id, quantity, description, packed, onDeleteItem }) {
   return (
     <li>
       <span style={ packed ? { textDecoration: "line-through" } : {} }>{ quantity } { description }</span>
-      <button>❌</button>
+      <button onClick={ () => onDeleteItem(id) }>❌</button>
     </li>
   )
 }
