@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Item from './Item';
 
-function PackingList({ items, onDeleteItem, handleToggleItem }) {
+function PackingList({ items, onDeleteItem, handleToggleItem, handleClearList }) {
   const [sortBy, setSortBy] = useState('input')
 
   let sortedItems
@@ -27,6 +27,7 @@ function PackingList({ items, onDeleteItem, handleToggleItem }) {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
+        <button onClick={ handleClearList }>Clear list</button>
       </div>
     </div>
   )
